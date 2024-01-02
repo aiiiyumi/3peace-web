@@ -1,12 +1,14 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Seo from "../components/seo"
 import PostLink from "../components/post-link"
 import * as styles from "../components/index.module.css"
+import ArticlesGrid from "../components/articles-grid"
 
 const links = [
   {
@@ -78,56 +80,68 @@ const moreLinks = [
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <Hero />
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <PostLink />
-      <PostLink />
-      <PostLink />
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+const IndexPage = () => {
+  const { allStrapiBlog } = useStaticQuery(graphql`
+  query {
+      allStrapiBlog {
+        nodes {
+          ...ArticleCard
+        }
+      }
+    }
+  `)
 
+  return (
+    <Layout>
+      <div className={styles.textCenter}>
+        <StaticImage
+          src="../images/example.png"
+          loading="eager"
+          width={64}
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt=""
+          style={{ marginBottom: `var(--space-3)` }}
+        />
+        <Hero />
+        <p className={styles.intro}>
+          <b>Example pages:</b>{" "}
+          {samplePageLinks.map((link, i) => (
+            <React.Fragment key={link.url}>
+              <Link to={link.url}>{link.text}</Link>
+              {i !== samplePageLinks.length - 1 && <> · </>}
+            </React.Fragment>
+          ))}
+          <br />
+          Edit <code>src/pages/index.js</code> to update this page.
+        </p>
+      </div>
+      <ArticlesGrid articles={allStrapiBlog.nodes} />
+      <PostLink />
+      <PostLink />
+      <PostLink />
+      <ul className={styles.list}>
+        {links.map(link => (
+          <li key={link.url} className={styles.listItem}>
+            <a
+              className={styles.listItemLink}
+              href={`${link.url}${utmParameters}`}
+            >
+              {link.text} ↗
+            </a>
+            <p className={styles.listItemDescription}>{link.description}</p>
+          </li>
+        ))}
+      </ul>
+      {moreLinks.map((link, i) => (
+        <React.Fragment key={link.url}>
+          <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+          {i !== moreLinks.length - 1 && <> · </>}
+        </React.Fragment>
+      ))}
+    </Layout>
+  )
+}
 /**
  * Head export to define metadata for the page
  *

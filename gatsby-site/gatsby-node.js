@@ -7,8 +7,46 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
+const path = require("path")
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
+  const articlePost = path.resolve("./src/templates/article-post.js")
+  const result = await graphql(
+    `
+      {
+        allStrapiBlog {
+          nodes {
+            title
+            slug
+          }
+        }
+      }
+    `
+  )
+
+  if (result.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your Strapi articles`,
+      result.errors
+    )
+    return
+  }
+
+  const articles = result.data.allStrapiBlog.nodes
+
+  if (articles.length > 0) {
+    articles.forEach((article) => {
+      createPage({
+        path: `/article/${article.slug}`,
+        component: articlePost,
+        context: {
+          slug: article.slug,
+        },
+      })
+    })
+  }
+
   createPage({
     path: "/using-dsg",
     component: require.resolve("./src/templates/using-dsg.js"),
