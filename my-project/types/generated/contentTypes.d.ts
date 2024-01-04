@@ -367,29 +367,56 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   info: {
     singularName: 'blog';
     pluralName: 'blogs';
-    displayName: 'blogs';
+    displayName: 'blog';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    text: Attribute.String;
-    article: Attribute.Blocks;
-    image: Attribute.Media;
-    date: Attribute.Date;
-    richtext: Attribute.RichText;
-    slug: Attribute.String;
     title: Attribute.String;
-    description: Attribute.String;
+    description: Attribute.Text;
+    content: Attribute.Blocks;
+    slug: Attribute.UID<'api::blog.blog', 'title'>;
+    image: Attribute.Media;
     cover: Attribute.Media;
-    blocks: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGlobalGlobal extends Schema.SingleType {
+  collectionName: 'globals';
+  info: {
+    singularName: 'global';
+    pluralName: 'globals';
+    displayName: 'Global';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    siteName: Attribute.String & Attribute.Required;
+    DefaultSeo: Attribute.Component<'component.default-seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::global.global',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::global.global',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -811,6 +838,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::blog.blog': ApiBlogBlog;
+      'api::global.global': ApiGlobalGlobal;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

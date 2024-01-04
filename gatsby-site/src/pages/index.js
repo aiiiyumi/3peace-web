@@ -82,7 +82,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => {
   const { allStrapiBlog } = useStaticQuery(graphql`
-  query {
+    query {
       allStrapiBlog {
         nodes {
           ...ArticleCard

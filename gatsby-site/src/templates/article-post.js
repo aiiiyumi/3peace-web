@@ -22,7 +22,7 @@ const ArticlePage = ({ data }) => {
         <p className="mt-4 text-2xl text-neutral-500">{article.description}</p>
         <GatsbyImage
           image={getImage(article?.cover?.localFile)}
-          alt={article?.cover?.alternativeText}
+          alt={article?.cover}
           className="mt-6"
         />
       </header>
@@ -41,7 +41,6 @@ export const pageQuery = graphql`
       title
       description
       cover {
-        alternativeText
         localFile {
           url
           childImageSharp {

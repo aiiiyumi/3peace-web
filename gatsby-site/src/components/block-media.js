@@ -11,7 +11,7 @@ const BlockMedia = ({ data }) => {
       ) : (
         <GatsbyImage
           image={getImage(data.file.localFile)}
-          alt={data.file.alternativeText}
+          alt={data.file}
         />
       )}
     </div>

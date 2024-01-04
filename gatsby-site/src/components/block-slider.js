@@ -20,7 +20,6 @@ const BlockSlider = ({ data }) => {
           <GatsbyImage
             key={file.id}
             image={getImage(file.localFile)}
-            alt={file.alternativeText}
           />
         ))}
       </Slider>
