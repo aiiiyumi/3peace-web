@@ -10,13 +10,12 @@ const ArticleCard = ({ article }) => {
     >
       <GatsbyImage
         image={getImage(article.cover?.localFile)}
-        alt={article.cover}
+        alt={article.cover?.alternativeText}
       />
       <div className="px-4 py-4">
         <h3 className="font-bold text-neutral-700">{article.title}</h3>
         <p className="line-clamp-2 mt-2 text-neutral-500">
-          {article.description}
-          {article.slug},
+          {article.description},
           {article.id}
         </p>
       </div>
@@ -30,6 +29,14 @@ export const query = graphql`
     slug
     title
     description
+    cover {
+      alternativeText
+      localFile {
+        childImageSharp {
+          gatsbyImageData(aspectRatio: 1.77)
+        }
+      }
+    }
   }
 `
 

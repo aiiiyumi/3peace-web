@@ -2,17 +2,21 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import BlocksRenderer from "../components/blocks-renderer"
+// import BlocksRenderer from "../components/blocks-renderer"
 import Seo from "../components/seo"
 
 const ArticlePage = ({ data }) => {
+  <pre>{JSON.stringify(data, null, 2)}</pre>
   const article = data.strapiBlog
+
 
   const seo = {
     metaTitle: article.title,
     metaDescription: article.description,
     shareImage: article.cover,
   }
+
+
 
   return (
     <Layout as="article">
@@ -28,6 +32,7 @@ const ArticlePage = ({ data }) => {
       </header>
       <main className="mt-8">
         {/* <BlocksRenderer blocks={article.blocks || []} /> */}
+        {article?.children?.text}
       </main>
     </Layout>
   )
@@ -47,6 +52,15 @@ export const pageQuery = graphql`
             gatsbyImageData
           }
         }
+        children {
+            text
+            type
+            url
+            code
+          }
+          image {
+            url
+          }
       }
     }
   }
