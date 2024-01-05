@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_component_default_seos",
+  "collectionName": "components_default_seo_default_seos",
   "info": {
-    "displayName": "defaultSeo",
-    "description": ""
+    "displayName": "DefaultSeo",
+    "icon": "earth"
   },
   "options": {},
   "attributes": {
@@ -13,16 +13,6 @@
       "type": "text"
     },
     "ShareImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
-    "Favicon": {
       "allowedTypes": [
         "images",
         "files",

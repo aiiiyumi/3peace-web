@@ -376,7 +376,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    content: Attribute.Blocks;
+    blocks: Attribute.Blocks;
     slug: Attribute.UID<'api::blog.blog', 'title'>;
     image: Attribute.Media;
     cover: Attribute.Media;
@@ -396,13 +396,15 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     singularName: 'global';
     pluralName: 'globals';
     displayName: 'Global';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     siteName: Attribute.String & Attribute.Required;
-    DefaultSeo: Attribute.Component<'component.default-seo'>;
+    DefaultSeo: Attribute.Component<'default-seo.default-seo'>;
+    Favicon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

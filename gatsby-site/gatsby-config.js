@@ -34,6 +34,8 @@ module.exports = {
             queryParams: {
               publicationState:
                 process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+              endpoint: "api/blogs",
+              api: { qs: {populate: "*"} },
               populate: {
                 cover: "*",
                 blocks: {
@@ -44,11 +46,31 @@ module.exports = {
           },
           {
             singularName: "author",
+            endpoint: "api/author",
+            api: { qs: {populate: "*"} },
           },
           {
             singularName: "category",
+            endpoint: "api/category",
+            api: { qs: {populate: "*"} },
           },
         ],
+        singleTypes: [
+          {
+            singularName: "global",
+            queryParams: {
+            endpoint: "api/global",
+            api: { qs: {populate: "*"} },
+              populate: {
+                Favicon: "*",
+                DefaultSeo: {
+                  populate: "*",
+                },
+              },
+            },
+          },
+        ],
+        queryLimit: 1000,
       },
     },
 
@@ -93,5 +115,6 @@ module.exports = {
         ]
       }
     },
+
   ],
 }

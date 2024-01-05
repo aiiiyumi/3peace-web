@@ -4,7 +4,8 @@
   "info": {
     "singularName": "global",
     "pluralName": "globals",
-    "displayName": "Global"
+    "displayName": "Global",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,10 +17,20 @@
       "required": true
     },
     "DefaultSeo": {
-      "displayName": "defaultSeo",
       "type": "component",
       "repeatable": false,
-      "component": "component.default-seo"
+      "component": "default-seo.default-seo"
+    },
+    "Favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
