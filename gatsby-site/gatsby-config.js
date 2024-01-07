@@ -12,68 +12,77 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
-
-
-module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-  },
-  plugins: [
-    {
-      resolve: "gatsby-source-strapi",
-      options: {
-        apiURL: process.env.STRAPI_API_URL || "http://127.0.0.1:1337",
-        accessToken: process.env.STRAPI_TOKEN,
-        collectionTypes: [
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL || "http://127.0.0.1:1337",
+  accessToken: process.env.STRAPI_TOKEN,
+          collectionTypes: [
           {
-            singularName: "blog",
+              singularName: "blog",
+              endpoint: "api/blog",
+              api: {
+                qs: {
+                populate: "*"
+              }
+            },
             queryParams: {
-              publicationState:
-                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
-              endpoint: "api/blogs",
-              api: { qs: {populate: "*"} },
+              publicationState:process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
               populate: {
-                cover: "*",
+                image: "*",
+                images: "*",
                 blocks: {
                   populate: "*",
                 },
+                image: {
+                  populate: "*",
+                }
               },
             },
           },
           {
             singularName: "author",
-            endpoint: "api/author",
-            api: { qs: {populate: "*"} },
           },
           {
             singularName: "category",
-            endpoint: "api/category",
-            api: { qs: {populate: "*"} },
           },
         ],
         singleTypes: [
           {
             singularName: "global",
             queryParams: {
-            endpoint: "api/global",
-            api: { qs: {populate: "*"} },
               populate: {
                 Favicon: "*",
                 DefaultSeo: {
                   populate: "*",
                 },
+                image: {
+                  populate: "*",
+                }
               },
             },
           },
-        ],
+  ],
         queryLimit: 1000,
-      },
-    },
+  maxParallelRequests: 20,
+  depthLimit: 50,
+  remoteFileHeaders: {
+    /**
+     * Customized request headers
+     * For http request with a image or other files need authorization
+     * For expamle: Fetch a CDN file which has a security config when gatsby building needs
+     */
+    Referer: "https://your-site-domain/",
+    // Authorization: "Bearer eyJhabcdefg_replace_it_with_your_own_token",
+  },
+};
 
+
+module.exports = {
+
+  plugins: [
+    {
+      resolve: "gatsby-source-strapi",
+      options: strapiConfig,
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -97,6 +106,20 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+      resolve: `gatsby-transformer-remark`,
+        options: {
+          plugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                // It's important to specify the maxWidth (in pixels) of
+                // the content container as this plugin uses this as the
+                // base for generating different widths of each image.
+                maxWidth: 590,
+              },
+            },
+          ],
+        },
     },
     `gatsby-plugin-sass`,
     {
@@ -115,6 +138,5 @@ module.exports = {
         ]
       }
     },
-
   ],
 }

@@ -6,19 +6,21 @@ const ArticleCard = ({ article }) => {
   return (
     <Link
       to={`/article/${article.slug}`}
-      className="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
+      className="post-link overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
     >
-      <GatsbyImage
-        image={getImage(article.cover?.localFile)}
-        alt={article.cover?.alternativeText}
-      />
-      <div className="px-4 py-4">
-        <h3 className="font-bold text-neutral-700">{article.title}</h3>
-        <p className="line-clamp-2 mt-2 text-neutral-500">
-          {article.description},
-          {article.id}
-        </p>
+      <div>
+        <GatsbyImage
+          image={getImage(article.image.localFile)}
+            alt={article.image.alternativeText}
+            className="post-link-image"
+          />
       </div>
+      <div className="post-liunk-text">
+        <h3 className="font-bold text-neutral-700">{article.title}</h3>
+        <p className="post-link-body">{article.description}</p>
+          <p className="post-link-date">{article.updatedAt}</p>
+      </div>
+
     </Link>
   )
 }
@@ -29,7 +31,8 @@ export const query = graphql`
     slug
     title
     description
-    cover {
+    updatedAt(formatString: "MMMM DD, YYYY")
+    image {
       alternativeText
       localFile {
         childImageSharp {

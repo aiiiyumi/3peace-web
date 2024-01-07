@@ -27,7 +27,7 @@
     },
     "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -36,16 +36,11 @@
         "audios"
       ]
     },
-    "cover": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "flatText": {
+      "type": "text"
+    },
+    "Markdown": {
+      "type": "richtext"
     }
   }
 }

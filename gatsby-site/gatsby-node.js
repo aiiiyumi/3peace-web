@@ -19,6 +19,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           nodes {
             title
             slug
+            image {
+              alternativeText
+              localFile {
+                url
+              }
+            }
+            blocks {
+              type
+            }
           }
         }
       }

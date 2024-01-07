@@ -13,7 +13,7 @@ export default function PostLink() {
           width={200}
           quality={95}
           formats={["auto", "webp", "avif"]}
-          alt=""
+          alt="テスト"
           style={{ marginBottom: `var(--space-3)` }}
         />
       </div>

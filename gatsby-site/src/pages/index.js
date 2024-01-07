@@ -3,12 +3,14 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 
+
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Seo from "../components/seo"
 import PostLink from "../components/post-link"
 import * as styles from "../components/index.module.css"
 import ArticlesGrid from "../components/articles-grid"
+
 
 const links = [
   {
@@ -80,12 +82,15 @@ const moreLinks = [
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
+
+
 const IndexPage = () => {
   const { allStrapiBlog } = useStaticQuery(graphql`
     query {
       allStrapiBlog {
         nodes {
           ...ArticleCard
+
         }
       }
     }

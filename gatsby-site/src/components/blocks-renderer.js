@@ -1,3 +1,4 @@
+
 import React from "react"
 import { graphql } from "gatsby"
 import BlockRichText from "./block-rich-text"
@@ -36,7 +37,7 @@ export const query = graphql`
   fragment Blocks on STRAPI__COMPONENT_SHARED_MEDIASTRAPI__COMPONENT_SHARED_QUOTESTRAPI__COMPONENT_SHARED_RICH_TEXTSTRAPI__COMPONENT_SHARED_SLIDERUnion {
     __typename
     ... on STRAPI__COMPONENT_SHARED_RICH_TEXT {
-      richTextBody: body {
+      strapiBlogMarkdownTextnode: body {
         __typename
         data {
           id
