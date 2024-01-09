@@ -12,6 +12,7 @@ import * as styles from "../components/index.module.css"
 import ArticlesGrid from "../components/articles-grid"
 
 
+
 const links = [
   {
     text: "Tutorial",
@@ -98,6 +99,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <Seo seo={{ metaTitle: "Home" }} />
       <div className={styles.textCenter}>
         <StaticImage
           src="../images/example.png"

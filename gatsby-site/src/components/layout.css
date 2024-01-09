@@ -222,3 +222,50 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+
+.container-blog {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+
+  .container-blog {
+    max-width: 640px;
+    /* padding-right: 2rem; */
+    /* padding-left: 2rem; */
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container-blog {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container-blog {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .container-blog {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+
+  .container-blog {
+    max-width: 1536px;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}

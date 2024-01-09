@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import BlocksRenderer from "../components/blocks-renderer"
 import Seo from "../components/seo"
+import "../style/post.scss"
 
 
 const ArticlePage = ({ data }) => {
   const article = data.strapiBlog
-  const Rich = data.strapiBlogMarkdownTextnode
+  // const Markdown = data.strapiBlogMarkdownTextnode
 
 
 
@@ -25,25 +25,30 @@ const seo = {
   return (
     <Layout as="article">
       <Seo seo={seo} />
-      <header className="container max-w-4xl py-8">
+      <header className="container-blog max-w-4xl py-8">
         <h1 className="text-6xl font-bold text-neutral-700">{article.title}</h1>
         <p className="mt-4 text-2xl text-neutral-500">{article.description}</p>
         <span>{article.updatedAt}</span>
-        {Rich.Markdown.html}<br />
        <GatsbyImage
-          image={article?.image?.localFile}
-          alt={"Come on!"}
+          image={getImage(article?.image?.localFile)}
+          alt={article?.image?.alternativeText}
           className="mt-6"
         />
       </header>
       <main className="mt-8">
 
         <div>
+          <h2 className="text-4xl font-bold text-neutral-700">Markdown</h2>
+          <div className="post-wrap"
+              dangerouslySetInnerHTML={{
+                __html: article?.Markdown.data.childMarkdownRemark.html,
+              }}
 
-          {Rich.Markdown}<br />
-          {<BlocksRenderer blocks={article.blocks || []} /> }
+            ></div>
 
         </div>
+
+
 
       </main>
     </Layout>
@@ -59,25 +64,25 @@ export const pageQuery = graphql`
       updatedAt(formatString: "MMMM DD, YYYY")
       image {
         alternativeText
-        localFile {
-          url
-          childrenImageSharp {
-           gatsbyImageData(aspectRatio: 1.77)
-            }
+          localFile {
+          childImageSharp {
+            gatsbyImageData(aspectRatio: 1.77)
+          }
         }
       }
-      flatText
-    }
 
-    strapiBlogMarkdownTextnode {
-      childrenMarkdownRemark {
-        html
-        id
-      }
       id
-      Markdown
+      Markdown {
+        data {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
     }
   }
+
+
 `
 
 

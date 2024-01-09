@@ -15,12 +15,13 @@ import ScrollTop from "./scroll-top"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query strapiBlog {
       site {
         siteMetadata {
           title
         }
       }
+
     }
   `)
 
