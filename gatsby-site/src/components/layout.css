@@ -228,12 +228,22 @@ pre tt:after {
   content: none;
 }
 
+.text-primary {
+  color: rgba(255, 255, 255, .87);
+}
+
+.text-natural {
+  color: #fcf4d4;
+}
+
 .container-blog {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 1rem;
   padding-left: 1rem;
+  padding-top: 5rem;
+  color: #fcf4d4;
 }
 
 @media (min-width: 640px) {
@@ -278,4 +288,24 @@ pre tt:after {
 
 .Point {
   position: relative;
+}
+
+.index-wrap {
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.Link-wrap {
+  display: flex
+}
+
+a.Link-button {
+  display: flex;
+  width: 100%;
+  background-color: #fcf4d4;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 3rem;
 }

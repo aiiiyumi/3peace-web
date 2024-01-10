@@ -15,3 +15,12 @@
     width: 45%;
   }
 }
+
+#tsparticles {
+  height: 600px;
+  position: absolute;
+}
+
+.particle-wrap {
+  height: 100%;
+}

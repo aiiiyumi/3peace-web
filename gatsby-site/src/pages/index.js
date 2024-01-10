@@ -11,7 +11,7 @@ import PostLink from "../components/post-link"
 import Canvas from "../components/canvas"
 import ArticlesGrid from "../components/articles-grid"
 import * as styles from "../components/index.module.css"
-
+import "../style/indexPage.css"
 
 
 const links = [
@@ -42,6 +42,13 @@ const links = [
 ]
 
 const samplePageLinks = [
+  {
+    text: "実績一覧を見る",
+    url: "article-list",
+    badge: false,
+    description:
+      "スリーピース株式会社の実績の一覧",
+  },
   {
     text: "Page 2",
     url: "page-2",
@@ -103,54 +110,88 @@ const IndexPage = () => {
       <div className="Point">
       <Seo seo={{ metaTitle: "Home" }} />
       <div className={styles.textCenter}>
-
-        <Canvas />
-          <Hero />
-          <StaticImage
-          src="../images/example.png"
-          loading="eager"
-          width={64}
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          alt=""
-            style={{ marginBottom: `var(--space-3)` }}
-            className="Point"
-          />
-        <p className={styles.intro}>
-          <b>Example pages:</b>{" "}
-          {samplePageLinks.map((link, i) => (
-            <React.Fragment key={link.url}>
-              <Link to={link.url}>{link.text}</Link>
-              {i !== samplePageLinks.length - 1 && <> · </>}
-            </React.Fragment>
-          ))}
-          <br />
-          Edit <code>src/pages/index.js</code> to update this page.
-        </p>
-      </div>
-      <ArticlesGrid articles={allStrapiBlog.nodes} />
-      <PostLink />
-      <PostLink />
-      <PostLink />
-      <ul className={styles.list}>
-        {links.map(link => (
-          <li key={link.url} className={styles.listItem}>
-            <a
-              className={styles.listItemLink}
-              href={`${link.url}${utmParameters}`}
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: `var(--size-content)`,
+            padding: `var(--size-gutter)`,
+          }}
+          className="view-wrap"
             >
-              {link.text} ↗
-            </a>
-            <p className={styles.listItemDescription}>{link.description}</p>
-          </li>
-        ))}
-      </ul>
-      {moreLinks.map((link, i) => (
-        <React.Fragment key={link.url}>
-          <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-          {i !== moreLinks.length - 1 && <> · </>}
-        </React.Fragment>
-      ))}
+              <Canvas />
+          </div>
+          <div className="content-wrap">
+            <div
+              style={{
+                margin: `0 auto`,
+                maxWidth: `var(--size-content)`,
+                padding: `var(--size-gutter)`,
+              }}
+                className="view-wrap"
+                  >
+                    <Hero />
+                    <StaticImage
+                    src="../images/example.png"
+                    loading="eager"
+                    width={64}
+                    quality={95}
+                    formats={["auto", "webp", "avif"]}
+                    alt=""
+                      style={{ marginBottom: `var(--space-3)` }}
+                      className="Point"
+                    />
+                  <p className={styles.intro}>
+                    <b>Example pages:</b>{" "}
+                    {samplePageLinks.map((link, i) => (
+                      <React.Fragment key={link.url}>
+                        <Link to={link.url}>{link.text}</Link>
+                        {i !== samplePageLinks.length - 1 && <> </>}
+                      </React.Fragment>
+                    ))}
+                    <br />
+                    Edit <code>src/pages/index.js</code> to update this page.
+              </p>
+
+              <div className="index-wrap">
+                <ArticlesGrid articles={allStrapiBlog.nodes} />
+                <div className="Link-wrap">
+                  <Link
+                    to={"article-list"}
+                    className="Link-button"
+                  >
+                      実績一覧を見る
+                  </Link>
+                </div>
+              </div>
+
+
+                <PostLink />
+                <PostLink />
+                <PostLink />
+                <ul className={styles.list}>
+                  {links.map(link => (
+                    <li key={link.url} className={styles.listItem}>
+                      <a
+                        className={styles.listItemLink}
+                        href={`${link.url}${utmParameters}`}
+                      >
+                        {link.text} ↗
+                      </a>
+                      <p className={styles.listItemDescription}>{link.description}</p>
+                    </li>
+                  ))}
+                </ul>
+                {moreLinks.map((link, i) => (
+                  <React.Fragment key={link.url}>
+                    <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+                    {i !== moreLinks.length - 1 && <> · </>}
+                  </React.Fragment>
+                ))}
+              </div>
+          </div>
+        </div>
+
+
       </div>
     </Layout>
   )

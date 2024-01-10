@@ -1,10 +1,10 @@
-.post-wrap h1 {
+.markdown-wrap h1 {
   font-size: 2rem;
   font-weight: 700;
   margin: 2rem auto;
 }
 
-.post-wrap p {
+.markdown-wrap p {
   width: 100%;
   max-width: 100%;
   font-size: 1rem;
@@ -13,6 +13,6 @@
   margin: 1.5rem auto;
 }
 
-.post-wrap img {
+.markdown-wrap img {
   margin: 1rem auto;
 }

@@ -25,32 +25,42 @@ const seo = {
   return (
     <Layout as="article">
       <Seo seo={seo} />
-      <header className="container-blog max-w-4xl py-8">
-        <h1 className="text-6xl font-bold text-neutral-700">{article.title}</h1>
-        <p className="mt-4 text-2xl text-neutral-500">{article.description}</p>
-        <span>{article.updatedAt}</span>
-       <GatsbyImage
-          image={getImage(article?.image?.localFile)}
-          alt={article?.image?.alternativeText}
-          className="mt-6"
-        />
-      </header>
-      <main className="mt-8">
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: `var(--size-content)`,
+          padding: `var(--size-gutter)`,
+        }}
+          className="view-wrap"
+      >
 
-        <div>
-          <h2 className="text-4xl font-bold text-neutral-700">Markdown</h2>
-          <div className="post-wrap"
-              dangerouslySetInnerHTML={{
-                __html: article?.Markdown.data.childMarkdownRemark.html,
-              }}
+        <header className="container-blog max-w-4xl py-8">
+          <h1 className="text-6xl font-bold text-primary">{article.title}</h1>
+          <p className="mt-4 text-2xl text-primary">{article.description}</p>
+          <span>{article.updatedAt}</span>
+        <GatsbyImage
+            image={getImage(article?.image?.localFile)}
+            alt={article?.image?.alternativeText}
+            className="mt-6"
+          />
+        </header>
+        <main className="mt-8">
 
-            ></div>
+          <div className="text-primary">
+            <div className="markdown-wrap"
+                dangerouslySetInnerHTML={{
+                  __html: article?.Markdown.data.childMarkdownRemark.html,
+                }}
 
-        </div>
+              ></div>
+
+          </div>
 
 
 
-      </main>
+        </main>
+      </div>
+
     </Layout>
   )
 }

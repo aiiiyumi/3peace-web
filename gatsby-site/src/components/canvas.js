@@ -17,8 +17,12 @@ export function Canvas() {
 
   return (
     <div class="container-fluid ill_01" id="wrap">
-      <Particles init={particlesInit} options={particlesOptions} />
-      <Helo　alt="株式会社スリーピース" />;
+      <Particles
+        init={particlesInit}
+        options={particlesOptions}
+        className="particle-style"
+      />
+      <Helo alt="株式会社スリーピース" />;
     </div>
 
   )
