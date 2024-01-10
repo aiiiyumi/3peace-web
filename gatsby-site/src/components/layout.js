@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
           maxWidth: `var(--size-content)`,
           padding: `var(--size-gutter)`,
         }}
+        className="view-wrap"
       >
         <main>{children}</main>
         <Footer />

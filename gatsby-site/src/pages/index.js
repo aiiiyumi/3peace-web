@@ -8,8 +8,9 @@ import Layout from "../components/layout"
 import Hero from "../components/hero"
 import Seo from "../components/seo"
 import PostLink from "../components/post-link"
-import * as styles from "../components/index.module.css"
+import Canvas from "../components/canvas"
 import ArticlesGrid from "../components/articles-grid"
+import * as styles from "../components/index.module.css"
 
 
 
@@ -99,18 +100,22 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <div className="Point">
       <Seo seo={{ metaTitle: "Home" }} />
       <div className={styles.textCenter}>
-        <StaticImage
+
+        <Canvas />
+          <Hero />
+          <StaticImage
           src="../images/example.png"
           loading="eager"
           width={64}
           quality={95}
           formats={["auto", "webp", "avif"]}
           alt=""
-          style={{ marginBottom: `var(--space-3)` }}
-        />
-        <Hero />
+            style={{ marginBottom: `var(--space-3)` }}
+            className="Point"
+          />
         <p className={styles.intro}>
           <b>Example pages:</b>{" "}
           {samplePageLinks.map((link, i) => (
@@ -146,6 +151,7 @@ const IndexPage = () => {
           {i !== moreLinks.length - 1 && <> · </>}
         </React.Fragment>
       ))}
+      </div>
     </Layout>
   )
 }

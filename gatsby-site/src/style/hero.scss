@@ -1,10 +1,18 @@
 .hero {
-  margin: 100px 0px;
+  margin: 3rem 0px;
 }
 
 .hero-text {
     font-size: calc(24px + 1.5vw);
     line-height: 1.2;
+    color: #fcf4d4;
+    font-weight: 800;
+    h2 {
+      font-size: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
 }
 
 .hero-author {
@@ -23,4 +31,23 @@
 .hero-author-text {
   color: #595959;
   margin: 0 0 0 10px;
+}
+
+.buy {
+  color: #00adef;
+}
+
+.sell {
+  color: #fef200;
+}
+
+.part {
+  color: #ed008c;
+}
+
+.hero-text-p {
+  color: #fcf4d4;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
 }

@@ -10,16 +10,18 @@
   z-index: 99;
   border: none;
   outline: none;
-  background-color: blue;
-  color: white;
+  background-color: rgba(33, 162, 221, 0.5);
+  color: antiquewhite;
+  text-decoration: none;
   cursor: pointer;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 50%;
   font-size: 18px;
   animation: fadeIn 1.5s ease 0s 1 normal;
 }
+
 #scrollBtn:hover {
-  background-color: #555;
+  background-color: #da1582;
 }
 
 @keyframes fadeIn {

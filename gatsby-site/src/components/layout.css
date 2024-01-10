@@ -8,6 +8,7 @@
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
+  --font-cabin: Cabin;
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
@@ -24,7 +25,11 @@
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
+  --3p-text-pink:#DB1583;
+  --3p-text-blue: #1FA3DD;
+  --3p-text-yellow: #F4E827;
 }
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -38,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
   font-family: sans-serif;
-  font-family: var(--font-sans);
+  font-family: var(--font-cabin);
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
@@ -177,7 +182,7 @@ li > p {
   margin-bottom: calc(var(--space-4) / 2);
 }
 p {
-  max-width: 680px;
+  line-height: 1.75;
 }
 code {
   font-size: 0.875rem;
@@ -268,4 +273,9 @@ pre tt:after {
     padding-right: 6rem;
     padding-left: 6rem;
   }
+}
+
+
+.Point {
+  position: relative;
 }

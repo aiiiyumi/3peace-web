@@ -4,7 +4,7 @@ import "../style/footer.css"
 export default function Footer() {
   return (
     <footer className="footer">
-      © {new Date().getFullYear()} Dev Blog
+      © {new Date().getFullYear()} 3peace Web
     </footer>
   )
 }

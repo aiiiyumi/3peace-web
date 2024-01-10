@@ -1,0 +1,17 @@
+.ill_01 {
+  text-align: center;
+  padding: 0;
+  margin: 5rem auto 0 auto;
+  width: 100%;
+}
+
+.ill_01 svg {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ill_01 svg {
+    width: 45%;
+  }
+}
