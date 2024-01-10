@@ -10,6 +10,7 @@ import Seo from "../components/seo"
 import PostLink from "../components/post-link"
 import Canvas from "../components/canvas"
 import ArticlesGrid from "../components/articles-grid"
+import ServiceLink from "../components/service-link"
 import * as styles from "../components/index.module.css"
 import "../style/indexPage.css"
 
@@ -50,8 +51,8 @@ const samplePageLinks = [
       "スリーピース株式会社の実績の一覧",
   },
   {
-    text: "Page 2",
-    url: "page-2",
+    text: "業務内容",
+    url: "page-4",
     badge: false,
     description:
       "A simple example of linking to another page within a Gatsby site",
@@ -151,7 +152,7 @@ const IndexPage = () => {
                     <br />
                     Edit <code>src/pages/index.js</code> to update this page.
               </p>
-
+              <ServiceLink />
               <div className="index-wrap">
                 <ArticlesGrid articles={allStrapiBlog.nodes} />
                 <div className="Link-wrap">
