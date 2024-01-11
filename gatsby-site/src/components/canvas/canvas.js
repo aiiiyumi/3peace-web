@@ -1,10 +1,10 @@
 import * as React from "react"
-import "../style/canvas.css"
+import "./canvas.css"
 import Particles from "react-tsparticles"
-import particlesOptions from "../assets/particlesjs-config.json"
+import particlesOptions from "./particlesjs-config.json"
 import { loadFull } from "tsparticles";
 
-import Helo from "../svg/web_01.svg"
+import Helo from "../../svg/web_01.svg"
 
 
 
@@ -16,7 +16,7 @@ export function Canvas() {
   };
 
   return (
-    <div class="container-fluid ill_01" id="wrap">
+    <div className="container-fluid ill_01" id="wrap">
       <Particles
         init={particlesInit}
         options={particlesOptions}

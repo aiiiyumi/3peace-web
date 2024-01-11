@@ -1,0 +1,61 @@
+.companyText {
+  color: rgba(255, 255, 255, .33);
+
+  a {
+    color: rgba(255, 255, 255, .33);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: rgba(255, 255, 255, .33);
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  li {
+    text-align: left;
+    font-size: 0.75rem;
+  }
+
+
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.ppImgWrap {
+ text-align: center;
+ a {
+  text-align: center;
+ }
+}
+
+.ppImg {
+  background: #FFF;
+  width: 42px;
+  height: 42px;
+}
+
+.icon {
+  font-size: 2.35rem;
+  color: rgba(255, 255, 255, .33);
+
+  &:hover {
+    color: #FFF;
+  }
+
+  &:visited {
+    color: rgba(255, 255, 255, .33);
+  }
+}

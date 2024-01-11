@@ -1,13 +1,13 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import "../style/post-link.css"
+import * as styles from './article.module.scss';
 
 
 export default function PostLink() {
   return (
-    <div className="post-link">
+    <div className={styles.article}>
       <div>
-        <StaticImage className="post-link-image"
+        <StaticImage className={styles.articleImage}
           src="https://m3-pharmacist-prod.s3.amazonaws.com/uploads/uploaded_image/pharmacist_news/8994/column01%20(3).png?1703496469"
           loading="eager"
           width={200}
@@ -17,10 +17,10 @@ export default function PostLink() {
           style={{ marginBottom: `var(--space-3)` }}
         />
       </div>
-      <div className="post-liunk-text">
+      <div className={styles.articleText}>
         <h2>Gatsbyでブログを作成してみた!</h2>
-        <p className="post-link-body">先日、爆速なサイトを作れると噂のReact製フレームワークのGatsbyを学んでみました。</p>
-        <p className="post-link-date">2020年5月30日</p>
+        <p className={styles.articleBody}>先日、爆速なサイトを作れると噂のReact製フレームワークのGatsbyを学んでみました。</p>
+        <p className={styles.articleDate}>2020年5月30日</p>
       </div>
     </div>
   )

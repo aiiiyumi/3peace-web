@@ -30,6 +30,25 @@
   --3p-text-yellow: #F4E827;
 }
 
+$breakpoints: (
+  'xs': 'screen and (min-width: 481px)',
+  //sp
+  'sm': 'screen and (min-width: 768px)',
+  //tablet
+  'md': 'screen and (min-width: 959px)',
+  //tablet_landscape
+  'lg': 'screen and (min-width: 1024px)',
+  //pc
+  'xl': 'screen and (min-width: 1280px)',
+  // wide
+  ) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -296,16 +315,39 @@ pre tt:after {
 }
 
 .Link-wrap {
-  display: flex
+  display: flex;
+  width: 100%;
+}
+
+.linkEnd{
+  justify-content: flex-end;
+}
+
+.linkStart {
+  justify-content: flex-start;
 }
 
 a.Link-button {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .3rem;
   width: 100%;
-  background-color: #fcf4d4;
-  color: #333;
+  background-color: rgba(221, 214, 254, .2);
+  color: rgba(221, 214, 254, 1);
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   padding: 1rem 3rem;
+  border-radius: 30px;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @include mq(sm) {
+    width: 40%;
+  }
+
 }

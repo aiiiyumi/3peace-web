@@ -1,5 +1,5 @@
 import React from 'react'
-import "../style/header.css"
+import "./header.scss"
 
 const HeaderMenuButton = ({onClick, open}) => {
   return (

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from "gatsby"
-import HeaderMenuButton from '../components/header-menu-button'
-import HeadNavi from '../components/head-navi'
-import "../style/header.css"
-import Logo from "../svg/logo.svg"
+import HeaderMenuButton from './header-menu-button'
+import HeadNavi from './head-navi'
+import "./header.scss"
+import Logo from "../../svg/logo.svg"
 
 const samplePageLinks = [
   {
@@ -47,7 +47,7 @@ return (
         <Logo alt="株式会社スリーピース" />;
       </Link>
     </div>
-    <div>
+    <div className='headerWrap'>
       <nav className="header-menu">
         {" "}
         {samplePageLinks.map((link, i) => (

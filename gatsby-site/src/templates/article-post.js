@@ -1,8 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import { StaticImage } from "gatsby-plugin-image"
+import { IoArrowBackSharp } from "react-icons/io5";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "../style/post.scss"
@@ -52,10 +54,20 @@ const seo = {
                   __html: article?.Markdown.data.childMarkdownRemark.html,
                 }}
 
-              ></div>
+            >
+
+            </div>
+
 
           </div>
-
+          <div className="Link-wrap linkStart">
+            <Link
+              to={"/"}
+              className="Link-button"
+            >
+                <IoArrowBackSharp />戻る
+            </Link>
+          </div>
 
 
         </main>

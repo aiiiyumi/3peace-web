@@ -3,11 +3,12 @@ import ArticleCard from "./article-card"
 
 const ArticlesGrid = ({ articles }) => {
   return (
-    <div>
+    <section>
+      <h1 className="text-6xl font-bold text-neutral-700">Achievements</h1>
       {articles.map((article) => (
-        <ArticleCard article={article} />
+        <ArticleCard key="article.id" article={article} />
       ))}
-    </div>
+    </section>
   )
 }
 

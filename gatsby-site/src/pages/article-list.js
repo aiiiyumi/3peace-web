@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import ArticlesGrid from "../components/articles-grid"
+import ArticlesGrid from "../components/article/articles-grid"
+import { IoArrowBackSharp } from "react-icons/io5";
 import "../style/post.scss"
 
 const ArticleList = () => {
@@ -20,7 +21,7 @@ const ArticleList = () => {
 
 
   return (
-    < Layout >
+    <Layout>
       <div
           style={{
             margin: `0 auto`,
@@ -31,12 +32,12 @@ const ArticleList = () => {
       >
         <div className="container-blog">
           <ArticlesGrid articles={allStrapiBlog.nodes} />
-          <div className="Link-wrap">
+          <div className="Link-wrap linkStart">
             <Link
               to={"/"}
               className="Link-button"
             >
-                戻る
+                <IoArrowBackSharp />戻る
             </Link>
           </div>
         </div>

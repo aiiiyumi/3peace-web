@@ -1,8 +1,8 @@
 // src/pages/page2.js
 import React from "react"
 import { Link } from "gatsby"
-import "../style/service.css"
-import "../components/layout.css"
+import "../components/service/service.scss"
+import "../components/layout.scss"
 
 export default function Page3() {
     return (
