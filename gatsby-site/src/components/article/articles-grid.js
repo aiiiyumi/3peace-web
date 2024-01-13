@@ -1,5 +1,8 @@
 import React from "react"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ArticleCard from "./article-card"
+
 
 const ArticlesGrid = ({ articles }) => {
   return (
@@ -8,6 +11,7 @@ const ArticlesGrid = ({ articles }) => {
       {articles.map((article) => (
         <ArticleCard key="article.id" article={article} />
       ))}
+
     </section>
   )
 }

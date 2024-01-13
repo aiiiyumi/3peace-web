@@ -20,7 +20,7 @@ import "../style/indexPage.scss"
 const IndexPage = () => {
   const { allStrapiBlog } = useStaticQuery(graphql`
     query {
-      allStrapiBlog {
+      allStrapiBlog(sort: {updatedAt: DESC}, limit: 3) {
         nodes {
           ...ArticleCard
 

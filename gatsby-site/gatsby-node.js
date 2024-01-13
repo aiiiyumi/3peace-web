@@ -8,6 +8,7 @@
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
 const path = require("path")
+const { paginate } = require(`gatsby-awesome-pagination`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -56,10 +57,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
 
+
   createPage({
     path: "/using-dsg",
     component: require.resolve("./src/templates/using-dsg.js"),
     context: {},
     defer: true,
   })
+
+
 }

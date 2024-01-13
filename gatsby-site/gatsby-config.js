@@ -163,5 +163,6 @@ module.exports = {
     },
     `react-tsparticles`,
     `tsparticles`,
+    `gatsby-awesome-pagination`,
   ],
 }

@@ -10,10 +10,18 @@ import "../style/post.scss"
 const ArticleList = () => {
   const { allStrapiBlog } = useStaticQuery(graphql`
     query {
-      allStrapiBlog {
+      allStrapiBlog(sort: {updatedAt: DESC}, limit: 2) {
         nodes {
           ...ArticleCard
 
+        }
+      pageInfo {
+          hasNextPage
+          hasPreviousPage
+          totalCount
+          perPage
+          pageCount
+          currentPage
         }
       }
     }

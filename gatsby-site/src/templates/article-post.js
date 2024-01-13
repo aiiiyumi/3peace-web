@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // import { StaticImage } from "gatsby-plugin-image"
 import { IoArrowBackSharp } from "react-icons/io5";
+import { IoArrowForwardSharp } from "react-icons/io5";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "../style/post.scss"
@@ -60,15 +61,22 @@ const seo = {
 
 
           </div>
-          <div className="Link-wrap linkStart">
+
+          <div className="Link-wrap linkBoth">
+
             <Link
               to={"/"}
               className="Link-button"
             >
                 <IoArrowBackSharp />戻る
             </Link>
+            <Link
+              to={"../../article-list"}
+              className="Link-button"
+            >
+                実績一覧を見る<IoArrowForwardSharp />
+            </Link>
           </div>
-
 
         </main>
       </div>
@@ -88,7 +96,9 @@ export const pageQuery = graphql`
         alternativeText
           localFile {
           childImageSharp {
-            gatsbyImageData(aspectRatio: 1.77)
+            gatsbyImageData(
+              aspectRatio: 1.77
+              )
           }
         }
       }
@@ -102,7 +112,9 @@ export const pageQuery = graphql`
         }
       }
     }
+
   }
+
 
 
 `

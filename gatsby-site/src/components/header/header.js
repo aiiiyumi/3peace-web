@@ -47,8 +47,7 @@ return (
         <Logo alt="株式会社スリーピース" />;
       </Link>
     </div>
-    <div className='headerWrap'>
-      <nav className="header-menu">
+    <nav className="header-menu">
         {" "}
         {samplePageLinks.map((link, i) => (
           <React.Fragment key={link.url}>
@@ -64,7 +63,6 @@ return (
       <HeadNavi
         open={open}
       />
-    </div>
   </header>
   )
 }
