@@ -381,6 +381,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     image: Attribute.Media;
     flatText: Attribute.Text;
     Markdown: Attribute.RichText;
+    DefaultSeo: Attribute.Component<'default-seo.default-seo', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

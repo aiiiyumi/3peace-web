@@ -13,8 +13,9 @@ const ArticleCard = ({ article }) => {
         <div>
           <GatsbyImage
             image={getImage(article.image.localFile)}
-              alt={article.image.alternativeText}
-              className={styles.articleImage}
+            alt={article.image.alternativeText}
+            className={styles.articleImage}
+            sizes="(min-width: 1000px) 1000px, 100vw"
             />
         </div>
 
@@ -40,7 +41,7 @@ export const query = graphql`
       alternativeText
       localFile {
         childImageSharp {
-          gatsbyImageData(aspectRatio: 1.77)
+          gatsbyImageData(width:1000)
         }
       }
     }

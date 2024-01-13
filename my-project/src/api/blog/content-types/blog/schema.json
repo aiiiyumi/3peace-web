@@ -41,6 +41,11 @@
     },
     "Markdown": {
       "type": "richtext"
+    },
+    "DefaultSeo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "default-seo.default-seo"
     }
   }
 }

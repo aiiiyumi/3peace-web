@@ -14,8 +14,13 @@ export default function StaticService() {
             padding: `var(--size-gutter)`,
           }}
           className="view-wrap"
-      >
-            <div>事業</div>
+        >
+          <div className="container-blog text-primary">
+          <h2 className="text-primary contentTitle">事業内容</h2>
+            <div className="ContentInner">
+              test
+            </div>
+            </div>
             <div className="Link-wrap linkStart">
             <Link
               to={"/"}

@@ -259,10 +259,15 @@ pre tt:after {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  padding-top: 5rem;
-  color: #fcf4d4;
+  padding: 7rem 1rem 5rem 1rem;
+}
+
+.ContentInner {
+  padding: 0 0 7rem 0;
+
+  ul {
+    margin: 0;
+  }
 }
 
 @media (min-width: 640px) {
@@ -304,6 +309,15 @@ pre tt:after {
   }
 }
 
+.contentTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0 3rem;
+
+  @include mq(sm) {
+    font-size: 2rem;
+  }
+}
 
 .Point {
   position: relative;
@@ -316,7 +330,14 @@ pre tt:after {
 
 .Link-wrap {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
+  margin: 5rem 0 0 0;
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 }
 
 .linkEnd{
@@ -344,6 +365,13 @@ a.Link-button {
   text-decoration: none;
   padding: 1rem 3rem;
   border-radius: 30px;
+  transition: .6s all;
+  transition-delay: .2s;
+
+  &:hover {
+      background-color: rgba(221, 214, 254, .6);
+      color: rgb(59 7 100);
+    }
 
   svg {
     width: 1.5rem;
@@ -353,5 +381,13 @@ a.Link-button {
   @include mq(sm) {
     width: 40%;
   }
-
 }
+
+.contentWrap {
+  padding: 5rem 0 0 0;
+}
+
+.contentWrapMain {
+  padding: 10rem 0 5rem 0;
+}
+

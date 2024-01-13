@@ -98,6 +98,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        breakpoints: [750, 1080, 1366, 1920],
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
@@ -117,7 +118,7 @@ module.exports = {
                 // It's important to specify the maxWidth (in pixels) of
                 // the content container as this plugin uses this as the
                 // base for generating different widths of each image.
-                maxWidth: 5000,
+                maxWidth: 2000,
               },
             },
           ],
@@ -163,6 +164,13 @@ module.exports = {
     },
     `react-tsparticles`,
     `tsparticles`,
+    `react-scroll-parallax`,
     `gatsby-awesome-pagination`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: 70
+      }
+    },
   ],
 }

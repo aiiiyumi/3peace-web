@@ -1,3 +1,19 @@
-.service-wrap {
-  width: 100%;
+.tablePaddin table, tr, th, td {
+  padding: 1rem;
+}
+
+.tableVertical {
+  vertical-align: top;
+}
+
+.mb2 {
+  margin: 3rem 0 1rem 0;
+}
+
+.listInner {
+  margin: 0;
+}
+
+.ppList {
+  list-style: none;
 }

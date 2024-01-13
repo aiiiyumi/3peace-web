@@ -12,7 +12,7 @@ import ServiceLink from "../components/service/service-link"
 import SponsorCom from '../components/sponsor';
 import CompanyCom from '../components/company'
 import { IoArrowForwardSharp } from "react-icons/io5";
-import * as styles from "../style/index.module.css"
+import * as styles from "../style/index.module.scss"
 import "../style/indexPage.scss"
 
 
@@ -53,21 +53,37 @@ const IndexPage = () => {
               }}
                 className="view-wrap"
             >
-
-            <Hero />
-
-            <ServiceLink />
-            <div className="index-wrap">
-              <ArticlesGrid articles={allStrapiBlog.nodes} />
-              <div className="Link-wrap linkEnd">
-                <Link
-                  to={"article-list"}
-                  className="Link-button"
-                >
-                    実績一覧を見る<IoArrowForwardSharp />
-                </Link>
-              </div>
+              <Hero />
             </div>
+          </div>
+           <ServiceLink />
+          <div className="content-wrap">
+            <div
+              style={{
+                margin: `0 auto`,
+                maxWidth: `var(--size-content)`,
+                padding: `var(--size-gutter)`,
+              }}
+                className="view-wrap"
+            >
+
+
+
+              <section>
+                <div className={`${styles.AchiveBack}`}>
+                  <div id="Achievements" className={`contentWrapMain ${styles.AchiveBgcolor}`} >
+                    <ArticlesGrid articles={allStrapiBlog.nodes} />
+                    <div className="Link-wrap linkEnd">
+                      <Link
+                        to={"article-list"}
+                        className="Link-button"
+                      >
+                          実績一覧を見る<IoArrowForwardSharp />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </section>
             <SponsorCom />
             <CompanyCom />
 

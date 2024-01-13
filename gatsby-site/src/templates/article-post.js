@@ -62,7 +62,9 @@ const seo = {
 
           </div>
 
-          <div className="Link-wrap linkBoth">
+
+        </main>
+        <div className="Link-wrap linkBoth">
 
             <Link
               to={"/"}
@@ -78,7 +80,6 @@ const seo = {
             </Link>
           </div>
 
-        </main>
       </div>
 
     </Layout>

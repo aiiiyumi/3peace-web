@@ -30,6 +30,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               type
             }
           }
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+            totalCount
+            perPage
+            pageCount
+            currentPage
+          }
         }
       }
     `
@@ -56,6 +64,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       })
     })
   }
+
+  // paginate({
+  //   createPage,
+  //   items: allStrapiBlog,
+  //   itemsPerPage: 2,
+  //   itemsPerFirstPage: 0,
+  //   pathPrefix: '/articles',
+  //   component: path.resolve('./src/pages/article-list.js'),
+  // })
 
 
   createPage({
