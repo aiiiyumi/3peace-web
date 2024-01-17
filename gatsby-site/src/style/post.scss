@@ -17,4 +17,12 @@
   img {
     margin: 1rem auto;
   }
+
+  a {
+    color: rgba(255, 255, 255, 0.87);
+
+    &:visited {
+      color: rgba(255, 255, 255, 0.87);
+    }
+  }
 }

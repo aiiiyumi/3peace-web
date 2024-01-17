@@ -259,7 +259,11 @@ pre tt:after {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 7rem 1rem 5rem 1rem;
+  padding: 7rem 0 5rem 0;
+
+  @include mq(md) {
+    padding: 7rem 0 5rem 0;
+  }
 }
 
 .ContentInner {
@@ -304,8 +308,6 @@ pre tt:after {
 
   .container-blog {
     max-width: 1536px;
-    padding-right: 6rem;
-    padding-left: 6rem;
   }
 }
 
@@ -391,3 +393,20 @@ a.Link-button {
   padding: 10rem 0 5rem 0;
 }
 
+.container-blog h1 {
+  margin: 0;
+}
+
+.view-wrap {
+  background: #27282e;
+  overflow: hidden;
+  margin: 2rem 0;
+
+  @include mq(md) {
+    margin: 1rem;
+  }
+}
+
+.content {
+  background: #27282e;
+}

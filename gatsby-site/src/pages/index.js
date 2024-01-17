@@ -29,53 +29,40 @@ const IndexPage = () => {
     }
   `)
 
+
   return (
     <Layout>
       <div className="Point">
       <Seo seo={{ metaTitle: "Home" }} />
       <div className={styles.textCenter}>
         <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: `var(--size-content)`,
-            padding: `var(--size-gutter)`,
-          }}
           className="view-wrap"
             >
-            <Canvas />
+          <Canvas />
           </div>
+          
           <div className="content-wrap">
             <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: `var(--size-content)`,
-                padding: `var(--size-gutter)`,
-              }}
                 className="view-wrap"
             >
               <Hero />
             </div>
           </div>
-           <ServiceLink />
+          <ServiceLink />
           <div className="content-wrap">
             <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: `var(--size-content)`,
-                padding: `var(--size-gutter)`,
-              }}
                 className="view-wrap"
             >
 
 
 
               <section>
-                <div className={`${styles.AchiveBack}`}>
-                  <div id="Achievements" className={`contentWrapMain ${styles.AchiveBgcolor}`} >
+                <div>
+                  <div id="Achievements" className="contentWrapMain" >
                     <ArticlesGrid articles={allStrapiBlog.nodes} />
                     <div className="Link-wrap linkEnd">
                       <Link
-                        to={"article-list"}
+                        to={`page`}
                         className="Link-button"
                       >
                           実績一覧を見る<IoArrowForwardSharp />

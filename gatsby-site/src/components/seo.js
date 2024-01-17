@@ -16,9 +16,7 @@ const Seo = ({ seo = {} }) => {
           MetaDiscription
           MetaTitle
           ShareImage {
-            localFile {
-              url
-            }
+            url
           }
         }
       }
@@ -65,7 +63,7 @@ const Seo = ({ seo = {} }) => {
       )
     }
     if (fullSeo.shareImage) {
-      const imageUrl = fullSeo.ShareImage.localFile
+      const imageUrl = fullSeo.ShareImage.url
       tags.push(
         {
           name: "image",

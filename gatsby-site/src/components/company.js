@@ -31,7 +31,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
     <section>
       <div id="Company" className="contentWrapMain">
-        <h1 className="text-6xl font-bold text-neutral-700">Company plofile</h1>
+        <h1 className="text-6xl font-bold text-neutral-700 text-center">Company plofile</h1>
         <div className="flex md:flex-row flex-col justify-start items-start gap-16px">
           <ul className={`basis-1/3 ${ styles.flex } ${styles.companyText}`}>
             <li className="font-bold">会社名</li>
@@ -71,7 +71,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
             <div className={styles.ppImgWrap}>
               <Link to="https://privacymark.jp/">
                 <StaticImage
-                  src="../images/17004172_200_EN.png"
+                  src="../images/privacy.png"
                   loading="lazy"
                   width={60}
                   height={60}
@@ -87,7 +87,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
       </div>
 
 
-      <div className={`text-sm ${styles.companyText}`}>
+      <div className={`text-sm ${styles.companyText} text-center`}>
         {moreLinks.map((link, i) => (
           <React.Fragment key={link.url}>
             <a href={`${link.url}${utmParameters}`}>{link.text}</a>

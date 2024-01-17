@@ -7,7 +7,10 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
+
+
 const path = require("path")
+
 const { paginate } = require(`gatsby-awesome-pagination`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -53,6 +56,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const articles = result.data.allStrapiBlog.nodes
 
+  // テンプレートファイルを作成
   if (articles.length > 0) {
     articles.forEach((article) => {
       createPage({
@@ -65,14 +69,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
 
-  // paginate({
-  //   createPage,
-  //   items: allStrapiBlog,
-  //   itemsPerPage: 2,
-  //   itemsPerFirstPage: 0,
-  //   pathPrefix: '/articles',
-  //   component: path.resolve('./src/pages/article-list.js'),
-  // })
+  if (articles.length > 0) {
+    paginate({
+      createPage,
+      items: articles,
+      itemsPerPage: 1,
+      component: path.resolve('./src/templates/article-list.js'),
+      pathPrefix: '/page'
+    })
+  }
 
 
   createPage({

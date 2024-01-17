@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         style={{
           margin: `0 auto`,
         }}
-        className="view-wrap"
+        className="content"
       >
         <main>{children}</main>
         <Footer />

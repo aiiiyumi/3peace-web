@@ -3,12 +3,14 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-// import { StaticImage } from "gatsby-plugin-image"
 import { IoArrowBackSharp } from "react-icons/io5";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import CompanyCom from '../components/company'
 import "../style/post.scss"
+import "../components/layout.scss"
+import PostInner from "../components/article/post-inner";
 
 
 const ArticlePage = ({ data }) => {
@@ -29,11 +31,6 @@ const seo = {
     <Layout as="article">
       <Seo seo={seo} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
           className="view-wrap"
       >
 
@@ -61,6 +58,7 @@ const seo = {
 
 
           </div>
+          <PostInner />
 
 
         </main>
@@ -73,13 +71,13 @@ const seo = {
                 <IoArrowBackSharp />戻る
             </Link>
             <Link
-              to={"../../article-list"}
+              to={"../../page"}
               className="Link-button"
             >
                 実績一覧を見る<IoArrowForwardSharp />
             </Link>
           </div>
-
+      <CompanyCom />
       </div>
 
     </Layout>
@@ -97,9 +95,7 @@ export const pageQuery = graphql`
         alternativeText
           localFile {
           childImageSharp {
-            gatsbyImageData(
-              aspectRatio: 1.77
-              )
+            gatsbyImageData
           }
         }
       }

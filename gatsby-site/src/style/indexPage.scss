@@ -1,6 +1,15 @@
+@use "../components/layout";
+
 .view-wrap {
   background: #27282e;
   overflow: hidden;
+  margin: 2rem 1rem;
+
+  @include layout.mq (md) {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 54rem;
+  }
 }
 
 .content-wrap {

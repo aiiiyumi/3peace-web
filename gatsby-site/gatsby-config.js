@@ -165,6 +165,7 @@ module.exports = {
     `react-tsparticles`,
     `tsparticles`,
     `react-scroll-parallax`,
+    `framer-motion`,
     `gatsby-awesome-pagination`,
     {
       resolve: "gatsby-plugin-anchor-links",

@@ -9,6 +9,7 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
+    "framer-motion": "^10.18.0",
     "gatsby": "^5.13.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-omni-font-loader": "^2.0.2",

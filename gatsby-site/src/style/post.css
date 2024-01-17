@@ -16,3 +16,11 @@
 .markdown-wrap img {
   margin: 1rem auto;
 }
+
+.markdown-wrap a {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.markdown-wrap a:visited {
+  color: rgba(255, 255, 255, 0.87);
+}

@@ -5,11 +5,30 @@ import { IoArrowForwardSharp } from "react-icons/io5";
 import "./service.css"
 import "../layout.scss"
 import * as styles from "../../style/index.module.scss"
+import { motion } from "framer-motion"
 
 
 export default function ServiceLink() {
+
+  const variants = { // こんな形でVariantsを設定。名前はなんでもOK。
+  visible: { // 状態を設定。名前はなんでもOK。visible（見える状態）は名前としてよく使う。
+    opacity: 1, // 透過率。0〜1の間の値。0で完全に透明、1で完全に見える状態。
+    transition: {
+      duration: 5 // 2秒かけて変化。
+    }
+  },
+  hidden: { // 状態を設定。名前はなんでもOK。hidden（隠れている状態）は名前としてよく使う。
+    opacity: 0,
+  },
+  }
+
   return (
-    <section>
+    <motion.section
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 10 }}
+    >
       <div className={`${styles.DeteailBack}`}>
 
         <div className={`contentWrapMain ${styles.DeteailBgcolor}`}>
@@ -24,7 +43,7 @@ export default function ServiceLink() {
               <h1 className="text-6xl font-bold text-primary">Business details</h1>
               <div className="service-wrap container-blo">
                 <StaticImage
-                  src="../../images/example.png"
+                  src="../../images/gatsby-icon.png"
                   loading="eager"
                   width={64}
                   quality={95}
@@ -50,7 +69,7 @@ export default function ServiceLink() {
           </div>
 
       </div>
-    </section>
+    </motion.section>
 
   )
 }

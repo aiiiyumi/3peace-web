@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { IoArrowBackSharp } from "react-icons/io5";
 import Layout from "../components/layout"
+import CompanyCom from '../components/company'
 import "../components/service/service.scss"
 import "../components/layout.scss"
 
@@ -9,11 +10,6 @@ export default function PrivacyPage() {
   return (
     <Layout>
       <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: `var(--size-content)`,
-            padding: `var(--size-gutter)`,
-          }}
           className="view-wrap"
       >
         <div className="container-blog text-primary">
@@ -48,6 +44,7 @@ export default function PrivacyPage() {
                 <IoArrowBackSharp />戻る
             </Link>
         </div>
+        <CompanyCom />
       </div>
     </Layout>
   )
