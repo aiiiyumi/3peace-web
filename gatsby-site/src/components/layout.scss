@@ -251,6 +251,10 @@ pre tt:after {
   color: rgba(255, 255, 255, .87);
 }
 
+.text-primary-500 {
+  color: rgba(255, 255, 255, .57);
+}
+
 .text-natural {
   color: #fcf4d4;
 }
@@ -409,4 +413,12 @@ a.Link-button {
 
 .content {
   background: #27282e;
+}
+
+.textH3 {
+  margin: 0;
+}
+
+.utility {
+  display: block;
 }

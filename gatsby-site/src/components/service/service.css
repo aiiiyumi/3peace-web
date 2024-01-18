@@ -17,3 +17,14 @@
 .ppList {
   list-style: none;
 }
+
+.testView {
+  opacity: 0;
+  transition: 2s;
+  transform: translate(-50%);
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0);
+}

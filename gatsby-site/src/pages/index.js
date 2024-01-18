@@ -30,6 +30,7 @@ const IndexPage = () => {
   `)
 
 
+
   return (
     <Layout>
       <div className="Point">
@@ -40,7 +41,7 @@ const IndexPage = () => {
             >
           <Canvas />
           </div>
-          
+
           <div className="content-wrap">
             <div
                 className="view-wrap"

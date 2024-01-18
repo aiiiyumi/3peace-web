@@ -1,38 +1,29 @@
-import * as React from "react"
+
+import React, { useEffect, useContext } from 'react'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { IoArrowForwardSharp } from "react-icons/io5";
 import "./service.css"
 import "../layout.scss"
 import * as styles from "../../style/index.module.scss"
-import { motion } from "framer-motion"
+import { ObserverContext } from "../../provider/IntersectionObserverProvider";
+import { handleObserver } from '../../utils/IntersectionObserver'
 
 
 export default function ServiceLink() {
 
-  const variants = { // こんな形でVariantsを設定。名前はなんでもOK。
-  visible: { // 状態を設定。名前はなんでもOK。visible（見える状態）は名前としてよく使う。
-    opacity: 1, // 透過率。0〜1の間の値。0で完全に透明、1で完全に見える状態。
-    transition: {
-      duration: 5 // 2秒かけて変化。
-    }
-  },
-  hidden: { // 状態を設定。名前はなんでもOK。hidden（隠れている状態）は名前としてよく使う。
-    opacity: 0,
-  },
-  }
+
+  const { toTargets, targets } = useContext(ObserverContext);
+  useEffect(() => {
+    handleObserver(targets)
+  }, [])
 
   return (
-    <motion.section
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      transition={{ duration: 10 }}
-    >
+    <section>
       <div className={`${styles.DeteailBack}`}>
 
         <div className={`contentWrapMain ${styles.DeteailBgcolor}`}>
-          <div className="">
+          <div ref={toTargets}  className="testView">
             <div
               style={{
                 margin: `0 auto`,
@@ -69,7 +60,7 @@ export default function ServiceLink() {
           </div>
 
       </div>
-    </motion.section>
+    </section>
 
   )
 }
