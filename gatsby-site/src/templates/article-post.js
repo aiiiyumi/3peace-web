@@ -36,12 +36,13 @@ const seo = {
 
         <header className="container-blog max-w-4xl py-8">
           <h1 className="text-6xl font-bold text-primary">{article.title}</h1>
-          <p className="mt-4 text-2xl text-primary">{article.description}</p>
+          <p className="mt-4 text-2xl text-primary textDiscription">{article.description}</p>
           <span>{article.updatedAt}</span>
         <GatsbyImage
             image={getImage(article?.image?.localFile)}
-            alt={article?.image?.alternativeText}
+            alt="実績の画像"
             className="mt-6"
+            sizes="(min-width: 1000px) 1000px, 100vw"
           />
         </header>
         <main className="mt-8">

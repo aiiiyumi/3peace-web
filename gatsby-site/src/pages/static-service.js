@@ -13,7 +13,7 @@ export default function StaticService() {
           className="view-wrap"
         >
           <div className="container-blog text-primary">
-          <h1 class="text-6xl font-bold text-neutral-700">Business details</h1>
+          <h1 className="text-6xl font-bold text-neutral-700">Business details</h1>
           <h2 className="text-primary contentTitle">事業内容</h2>
             <div className="ContentInner">
               test

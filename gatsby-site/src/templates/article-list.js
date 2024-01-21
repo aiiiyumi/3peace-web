@@ -20,11 +20,11 @@ const List = ({ data, pageContext }) => {
           className="view-wrap"
       >
         <div className="container-blog text-primary">
-          <h1 class="text-6xl font-bold text-neutral-700">Achievements</h1>
+          <h1 className="text-6xl font-bold text-neutral-700">Achievements</h1>
           <h2 className="text-primary contentTitle">実績</h2>
 
         {data.allStrapiBlog.nodes.map(article => (
-          <div className={styles.articleWrap}>
+          <div className={styles.articleWrap} key={article.slug}>
             <Link
               to={`../article/${article.slug}`}
               className={`${styles.article} overflow-hidden rounded-lg bg-pink-800/5 shadow-sm transition-shadow hover:shadow-md`}
@@ -50,7 +50,7 @@ const List = ({ data, pageContext }) => {
 
 
         <div className="Link-wrap">
-          <Pagination pageContext={pageContext} />
+          <Pagination pageContext={pageContext}/>
         </div>
         <div className="Link-wrap linkStart">
             <Link

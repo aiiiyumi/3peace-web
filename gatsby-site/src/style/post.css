@@ -24,3 +24,8 @@
 .markdown-wrap a:visited {
   color: rgba(255, 255, 255, 0.87);
 }
+
+.textDiscription {
+  font-size: 1rem;
+  line-height: 1.5;
+}

@@ -25,7 +25,7 @@ const Pagination = ({ pageContext }) => {
         pages.map(page => (
           humanPageNumber !== page
             ? <Link className={styles.pagenationNumItem} key={page} to={page === 1 ? "/page" : `/page/${page}`} style={style}>{page}</Link>
-            : <span className={styles.pagenationNumNow} style={style}>{page}</span>
+            : <span className={styles.pagenationNumNow} key={page} style={style}>{page}</span>
         ))
       }
       {

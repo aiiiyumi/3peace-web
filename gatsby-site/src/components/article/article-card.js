@@ -13,7 +13,7 @@ const ArticleCard = ({ article }) => {
         <div>
           <GatsbyImage
             image={getImage(article.image.localFile)}
-              alt={article.image.alternativeText}
+            alt="実績の画像"
             className={styles.articleImage}
             sizes="(min-width: 1000px) 1000px, 100vw"
             />
