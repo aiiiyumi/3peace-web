@@ -8,7 +8,7 @@ const ArticleCard = ({ article }) => {
     <div className={styles.articleWrap}>
       <Link
         to={`/article/${article.slug}`}
-        className={`${styles.article} overflow-hidden rounded-lg bg-pink-800/5 shadow-sm transition-shadow hover:shadow-md`}
+        className={`${styles.article} overflow-hidden rounded-lg bg-pink-800/5 shadow-sm text-left transition-shadow hover:shadow-md`}
       >
         <div>
           <GatsbyImage

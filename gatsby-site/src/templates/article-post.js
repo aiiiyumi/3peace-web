@@ -35,7 +35,7 @@ const seo = {
       >
 
         <header className="container-blog max-w-4xl py-8">
-          <h1 className="text-6xl font-bold text-primary">{article.title}</h1>
+          <h1 className="text-4xl leading-relaxed font-bold text-primary">{article.title}</h1>
           <p className="mt-4 text-2xl text-primary textDiscription">{article.description}</p>
           <span>{article.updatedAt}</span>
         <GatsbyImage
