@@ -34,7 +34,7 @@ export default function ServiceLink() {
               <h1 className="text-6xl font-bold text-primary">Business details</h1>
               <div className="service-wrap container-blo">
                 <StaticImage
-                  src="../../images/gatsby-icon.png"
+                  src="../../images/logo.png"
                   loading="eager"
                   width={64}
                   quality={95}
@@ -43,7 +43,7 @@ export default function ServiceLink() {
                   style={{ marginBottom: `var(--space-3)` }}
                   className="Point"
                 />
-                <p className="text-primary">Canvas 要素は 2 つのプロパティを使用して構成できます。1 つはクラス名を設定し、もう 1 つはスタイルを設定します。さらに、アニメーションの開始、終了、リセットのためにコールバックを実装できます。「confetti」プロップを使用して必要な数の紙吹雪を起動する場合、さらにカスタマイズするために「canvas-confetti」インスタンスを取得することをお勧めします。この場合、`fire`、`reset`、`onFire`、`onDecay`、および `onReset` プロパティの使用は避けてください。</p>
+                <p className="text-primary">2011年の創業から営業支援を長年実施しております。</p>
               </div>
               <div className="Link-wrap linkEnd">
                 <Link

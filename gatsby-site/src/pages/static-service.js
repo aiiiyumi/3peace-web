@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
-import { LuDownloadCloud } from "react-icons/lu";
+import { LuExternalLink } from "react-icons/lu";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import Layout from "../components/layout"
 import CompanyCom from '../components/company'
@@ -49,7 +49,7 @@ export default function StaticService() {
                 <p className="text">
                   コンテンツ制作と SNS代行の案件を受注したいというニーズに対して、 弊社がアポイントの獲得を支援しました。
                 </p>
-                <div className="subTittle">
+                {/* <div className="subTittle">
                   料金
                 </div>
                 <p className="text">
@@ -77,9 +77,9 @@ export default function StaticService() {
                       <li>スクリプト制作</li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
                 <div className="Link-wrap linkStart">
-                  <div className="dlButton">BtoB向けサービス資料をダウンロードする<LuDownloadCloud /></div>
+                  <a href="https://docs.google.com/presentation/d/1E50ZhMf0a2HjbsPz-VAlOJs_ut-g6nPF_NH_4alcYlQ/edit#slide=id.g3269d366f97_0_84" target="_blank" className="dlButton">BtoB向けサービス資料見る<LuExternalLink /></a>
                 </div>
               </div>
 
@@ -114,7 +114,7 @@ export default function StaticService() {
                 <p className="text">
                   教育業界向け商材を全国の自治体に広めたいというニーズに対して、弊社がアポイント獲得を支援しました。
                 </p>
-                <div className="subTittle">
+                {/* <div className="subTittle">
                   料金
                 </div>
                 <p className="text">
@@ -158,9 +158,9 @@ export default function StaticService() {
                   <div className="flex-1 self-stretch item1 text-2xl font-bold tracking-wider">
                     <div className="text-center grow">50万円<span className="text-sm">(税抜)</span></div>
                   </div>
-                </div>
+                </div> */}
                 <div className="Link-wrap linkStart">
-                  <div className="dlButton">自治体向けサービス資料をダウンロードする<LuDownloadCloud /></div>
+                  <a href="https://docs.google.com/presentation/d/1E50ZhMf0a2HjbsPz-VAlOJs_ut-g6nPF_NH_4alcYlQ/edit#slide=id.g32c5bee76f3_0_294" target="_blank" className="dlButton">自治体向けサービス資料を見る<LuExternalLink /></a>
                 </div>
               </div>
 

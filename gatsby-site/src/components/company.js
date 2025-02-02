@@ -43,21 +43,19 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
             <li className="font-bold">資本金</li>
             <li>900万1円</li>
             <li className="font-bold">所在地</li>
-            <li>東京都渋谷区2-21-1 渋谷ヒカリエ33F</li>
+            <li>本社</li>
+            <li>東京都渋谷区2-21-1<br />渋谷ヒカリエ33F</li>
+            <li>大分営業所</li>
+            <li>大分県別府市北浜2-10-19<br />グランメールビル3階</li>
           </ul>
           <ul className={`basis-1/3 ${styles.flex} ${styles.companyText}`}>
             <li className="font-bold">事業内容</li>
-            <li>レンタル業</li>
-            <li>広告代理業又は広告業</li>
-            <li>電気通信業に基づく通信回線利用加入者の募集及び利用権の販売促進に関する業務</li>
-            <li>LED照明の販売</li>
-            <li>飲食店の経営、企画及び経営コンサルティング</li>
-            <li>インターネット等のNetworkシステムを利用した通信販売業</li>
-            <li>インターネット上のショッピングモールの企画、開設、運用及びそれらのノウハウの提供</li>
-            <li>インターネットメディア事業</li>
-            <li>上記各号に付帯する一切の事業</li>
-            <li>自治体営業支援</li>
-            <li>DXコンサルティング</li>
+            <li>自治体特化型営業支援</li>
+            <li>新規顧客開拓アポイント取得</li>
+            <li>WEB商談による販売代行</li>
+            <li>ターゲットリストの作成</li>
+            <li>メールマーケティング</li>
+            <li>顧客データクリーニング　など</li>
           </ul>
           <ul className={`basis-1/3 ${ styles.flexRow} ${styles.companyText}`}>
           <li>
